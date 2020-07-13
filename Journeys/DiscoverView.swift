@@ -57,12 +57,17 @@ struct DiscoverView: View {
                         }
                         .padding(.horizontal, 20)
 
-                        ScrollView(.horizontal) {
+                        ScrollView(.horizontal, showsIndicators: false) {
                             LazyHStack {
                                 ForEach(location.pictures, id: \.self) { image in
                                     Image(image)
+                                        .resizable()
+                                        .frame(width: 150)
+                                        .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 }
                             }
+                            .frame(height: 100)
+                            .padding([.horizontal, .bottom], 20)
                         }
                         
                         VStack(alignment: .leading) {
