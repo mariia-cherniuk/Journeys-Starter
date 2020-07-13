@@ -15,6 +15,9 @@ struct DiscoverView: View {
     let location: Location
     @State private var region: MKCoordinateRegion
     
+    let disclosureTitle = "Travel advisory"
+    @State private var disclosureShowing = false
+    
     init(location: Location) {
         self.location = location
         _region = State(wrappedValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)))
@@ -97,6 +100,25 @@ struct DiscoverView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
                             .frame(height: 200)
                             .padding([.horizontal, .bottom], 20)
+                        
+                        
+                        if !location.advisory.isEmpty {
+                            DisclosureGroup {
+                                Text(location.advisory)
+                                    .font(.body)
+                            } label: {
+                                Text(disclosureTitle)
+                                    .font(.title)
+                                    .contentShape(Rectangle())
+                                    
+                                    .onTapGesture {
+                                        withAnimation {
+                                            disclosureShowing.toggle()
+                                        }
+                                    }
+                            }
+                            .padding()
+                        }
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 20)
