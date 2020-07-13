@@ -11,7 +11,15 @@ import SwiftUI
 import VisualEffects
 
 struct DiscoverView: View {
+    
     let location: Location
+    @State private var region: MKCoordinateRegion
+    
+    init(location: Location) {
+        self.location = location
+        _region = State(wrappedValue: MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)))
+    }
+    
 
     var body: some View {
         GeometryReader { geo in
@@ -84,6 +92,11 @@ struct DiscoverView: View {
                         }
                         .padding(.horizontal, 20)
                         .padding(.bottom, 50)
+                        
+                        Map(coordinateRegion: $region, interactionModes: [])
+                            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+                            .frame(height: 200)
+                            .padding([.horizontal, .bottom], 20)
                     }
                     .background(
                         RoundedRectangle(cornerRadius: 20)
