@@ -10,6 +10,7 @@ import SwiftUI
 struct PicksView: View {
     
     @EnvironmentObject var locations: Locations
+    @ScaledMetric var frame: CGFloat = 100
     
     private let layout = [
         GridItem(.adaptive(minimum: 100))
@@ -41,7 +42,7 @@ struct PicksView: View {
                             VStack {
                                 Image(place.heroPicture)
                                     .resizable()
-                                    .frame(height: 125)
+                                    .frame(width: max(90, min(frame, 120)), height:  max(90, min(frame, 120)))
                                     .overlay(
                                         VStack {
                                             Spacer()
