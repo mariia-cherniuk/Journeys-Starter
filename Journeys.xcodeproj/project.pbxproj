@@ -19,6 +19,7 @@
 		517B236224B8A1AA0073C8F6 /* TipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B236124B8A1AA0073C8F6 /* TipsView.swift */; };
 		517B236424B8B27C0073C8F6 /* tips.json in Resources */ = {isa = PBXBuildFile; fileRef = 517B236324B8B27C0073C8F6 /* tips.json */; };
 		517B236624B8B28D0073C8F6 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 517B236524B8B28D0073C8F6 /* Bundle-Decodable.swift */; };
+		7429C6CF24BE0BA700196D75 /* DiscoverOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7429C6CE24BE0BA700196D75 /* DiscoverOverlayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		517B236124B8A1AA0073C8F6 /* TipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsView.swift; sourceTree = "<group>"; };
 		517B236324B8B27C0073C8F6 /* tips.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = tips.json; sourceTree = "<group>"; };
 		517B236524B8B28D0073C8F6 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
+		7429C6CE24BE0BA700196D75 /* DiscoverOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverOverlayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				51517A9C24B31AA500DEAED4 /* JourneysApp.swift */,
 				51517A9E24B31AA500DEAED4 /* ContentView.swift */,
 				51517AAD24B31F8400DEAED4 /* DiscoverView.swift */,
+				7429C6CE24BE0BA700196D75 /* DiscoverOverlayView.swift */,
 				513792A824B3DACA009EF05D /* PicksView.swift */,
 				517B236124B8A1AA0073C8F6 /* TipsView.swift */,
 				517B236524B8B28D0073C8F6 /* Bundle-Decodable.swift */,
@@ -169,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7429C6CF24BE0BA700196D75 /* DiscoverOverlayView.swift in Sources */,
 				5160930524BBD4A500279921 /* Location.swift in Sources */,
 				51517A9F24B31AA500DEAED4 /* ContentView.swift in Sources */,
 				51517A9D24B31AA500DEAED4 /* JourneysApp.swift in Sources */,
