@@ -32,8 +32,9 @@ struct TipsView: View {
     
     var body: some View {
         List(nodes, children: \.nodes) { node in
-            Text(node.name)
-                .font(.headline)
+            if node.nodes != nil {
+                Label(node.name, systemImage: "quote.bubble")
+            }
         }
         .navigationTitle("Tips")
     }
