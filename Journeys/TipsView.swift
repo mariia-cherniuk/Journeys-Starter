@@ -11,23 +11,29 @@ struct Tip: Decodable, Identifiable {
     enum CodingKeys: CodingKey {
         case title, body
     }
-
+    
     let id = UUID()
     let title: String
     let body: String
 }
 
-struct TipsView: View {
-    let tips = Bundle.main.decode([Tip].self, from: "tips.json")
+struct TipNode: Identifiable {
+    let id = UUID()
+    let name: String
+    let nodes: [TipNode]?
+}
 
+struct TipsView: View {
+    
+    private var nodes: [TipNode] {
+        let tips = Bundle.main.decode([Tip].self, from: "tips.json")
+        return tips.map { TipNode(name: $0.title, nodes: [TipNode(name: $0.body, nodes: nil)]) }
+    }
+    
     var body: some View {
-        List(tips) { tip in
-            VStack(alignment: .leading) {
-                Text(tip.title)
-                    .font(.headline)
-                Text(tip.body)
-            }
-            .padding(.vertical)
+        List(nodes, children: \.nodes) { node in
+            Text(node.name)
+                .font(.headline)
         }
         .navigationTitle("Tips")
     }
